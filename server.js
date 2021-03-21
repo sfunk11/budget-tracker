@@ -2,6 +2,7 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const compression = require("compression");
+const path = require("path");
 
 const PORT = 3000;
 
@@ -22,6 +23,9 @@ mongoose.connect("mongodb://localhost/budget", {
 
 // routes
 app.use(require("./routes/api.js"));
+app.get("/",function(req,res){    
+  res.sendFile(path.join(__dirname,"./public/index.html"));
+});
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);

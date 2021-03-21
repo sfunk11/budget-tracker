@@ -1,4 +1,4 @@
-import "db.js"
+import "./db.js"
 
 let transactions = [];
 let myChart;
