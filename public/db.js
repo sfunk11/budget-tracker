@@ -21,7 +21,7 @@ request.onerror = function(event) {
   console.log("Woops! " + event.target.errorCode);
 };
 
-function saveRecord(record) {
+export default function saveRecord(record) {
   // create a transaction on the pending db with readwrite access
   const transaction = db.transaction(["pending"], "readwrite");
 
@@ -35,7 +35,7 @@ function saveRecord(record) {
 function checkDatabase() {
   // open a transaction on your pending db
   const transaction = db.transaction(["pending"], "readwrite");
-  // access your pending object store
+  // access your pending object storemon
   const store = transaction.objectStore("pending");
   
   // get all records from store and set to a variable

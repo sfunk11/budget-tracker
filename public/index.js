@@ -1,4 +1,4 @@
-import "./db.js"
+import saveRecord from "./db.js"
 
 let transactions = [];
 let myChart;
@@ -138,7 +138,7 @@ function sendTransaction(isAdding) {
   })
   .catch(err => {
     // fetch failed, so save in indexed db
-    saveRecord(transaction);
+   saveRecord(transaction);
 
     // clear form
     nameEl.value = "";
